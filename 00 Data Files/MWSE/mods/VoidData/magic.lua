@@ -3,6 +3,7 @@ local this = {}
 local common = require("VoidData.common")
 local config = require("VoidData.config")
 local tamrielDataMagic = require("TamrielData.magic")
+local tamrielDataConfig = require("TamrielData.config")
 
 if config.newEffects then
 	tes3.claimSpellEffectId("V_summon_Farmer", 2900)
@@ -18,6 +19,14 @@ local vd_summon_effects = {
 -- spell id, cast type, spell name, spell mana cost, 1st effect id, 1st range type, 1st area, 1st duration, 1st minimum magnitude, 1st maximum magnitude, ...
 local vd_summon_spells = {
 	{ "V_AS_Cnj_SummonFarmer", tes3.spellType.spell, common.i18n("magic.summonFarmer"), 105, { tes3.effect.V_summon_Farmer }, tes3.effectRange.self, 0, 60, 1, 1 },
+}
+
+-- ingredient id, 1st effect id, 1st effect attribute id, 1st effect skill id, 2nd effect id, ...
+local vd_ingredients = {
+	{ "V_Mas_IngMisc_SaccharineBlue_01", tes3.effect.restoreMagicka, -1, -1,
+										 tes3.effect.T_restoration_FortifyCasting, -1, -1,
+										 tes3.effect.restoreAttribute, tes3.attribute.intelligence, 0,
+										 tes3.effect.telekinesis, -1, -1 },
 }
 
 -- Adds new magic effects based on the tables above
@@ -76,6 +85,10 @@ end)
 event.register(tes3.event.load, function()
 	if config.newEffects then
 		tamrielDataMagic.replaceSpells(vd_summon_spells)
+	end
+
+	if tamrielDataConfig.miscSpells then
+		tamrielDataMagic.replaceIngredientEffects(vd_ingredients)
 	end
 end)
 
