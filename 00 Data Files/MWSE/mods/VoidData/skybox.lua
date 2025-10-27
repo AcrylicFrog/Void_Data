@@ -1,5 +1,7 @@
 local this = {}
 
+local common = require("VoidData.common")
+
 local wc
 local skyRoot
 local sky
@@ -143,11 +145,17 @@ function this.manageSkybox(e)
 		tes3.changeWeather({ id = tes3.weather.foggy, immediate = true })
 		saveExteriorColorsFog()
 		setWeatherInteriorColors()
-	elseif e.previousCell and (attributionsShareCells[e.previousCell.id] or voidCells[e.previousCell.id]) then
+	elseif tes3.player.cell.region and common.masserRegions[tes3.player.cell.region.id] then
+		hideCustomSkyboxes()
+		sky.masser.children[1].children[1].appCulled = true		-- The moons' appCulled flag is reset every frame and cannot be set to true in callback for simulate or simulated, so doing so for the NiTriShapes is the best solution for now. Changes to MWSE may be needed to adjust the movement of the moons and sun in the future.
+		sky.masser.children[2].children[1].appCulled = true
+	elseif e.previousCell and (attributionsShareCells[e.previousCell.id] or voidCells[e.previousCell.id] or (e.previousCell.region and common.masserRegions[e.previousCell.region.id])) then
 		skyRoot.appCulled = not tes3.player.cell.isOrBehavesAsExterior
 
 		-- Show vanilla sky
 		for _,node in pairs(sky) do node.appCulled = false end
+		sky.masser.children[1].children[1].appCulled = false
+		sky.masser.children[2].children[1].appCulled = false
 
     	hideCustomSkyboxes()
 

@@ -3,7 +3,8 @@ if not tes3.isModActive("Void_Data.esm") then return end
 local config = require("VoidData.config")
 local magic = require("VoidData.magic")
 local sdf = require("VoidData.sdf")
-local skyboxes = require("VoidData.skyboxes")
+local skybox = require("VoidData.skybox")
+local weather = require("VoidData.weather")
 
 -- Setup MCM
 dofile("VoidData.mcm")
@@ -17,7 +18,13 @@ event.register(tes3.event.loaded, function()
     --initTableValues(myData, player_data_defaults)
 
 	if config.skyboxes then
-		event.register(tes3.event.cellChanged, skyboxes.manageSkybox, { unregisterOnLoad = true })
+		event.register(tes3.event.cellChanged, skybox.manageSkybox, { unregisterOnLoad = true })
+	end
+
+	if config.weather then
+		event.register(tes3.event.cellChanged, weather.manageWeathers, { unregisterOnLoad = true })
+		event.register(tes3.event.weatherChangedImmediate, weather.manageWeathers, { unregisterOnLoad = true })
+		event.register(tes3.event.weatherTransitionStarted, weather.manageWeathers, { unregisterOnLoad = true })
 	end
 
 	if config.sdf then
