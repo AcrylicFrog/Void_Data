@@ -18,10 +18,13 @@ event.register(tes3.event.loaded, function()
     --initTableValues(myData, player_data_defaults)
 
 	if config.skyboxes then
-		event.register(tes3.event.cellChanged, skybox.manageSkybox, { unregisterOnLoad = true })
+		skybox.setupSkyboxes()
+		event.register(tes3.event.cellChanged, skybox.switchSkybox, { unregisterOnLoad = true })
+		event.register(tes3.event.render, skybox.manageOrbits, { unregisterOnLoad = true })
+		timer.start{ duration = 1/120, iterations = -1, type = timer.game, callback = skybox.enableVertexColorChange }
 	end
 
-	if config.weather then
+	if config.weathers then
 		event.register(tes3.event.cellChanged, weather.manageWeathers, { unregisterOnLoad = true })
 		event.register(tes3.event.weatherChangedImmediate, weather.manageWeathers, { unregisterOnLoad = true })
 		event.register(tes3.event.weatherTransitionStarted, weather.manageWeathers, { unregisterOnLoad = true })

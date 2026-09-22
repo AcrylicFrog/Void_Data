@@ -12,7 +12,7 @@ return {
 	["mcm.settings"] = "Paramètres",
 
 	["mcm.skyboxesLabel"] = "Cieux alternatifs",
-	["mcm.skyboxesDescription"] = "Ajout des cieux pour les différents royaumes au-delà de Nirn.\nRequiert un rechargement.\n\nPar défaut : activé\n\n",
+	["mcm.skyboxesDescription"] = "Ajoute des cieux pour les différents royaumes au-delà de Nirn.\nRequiert un rechargement.\n\nPar défaut : activé\n\n",
 	["mcm.newEffectsLabel"] = "Nouveaux effets magiques",
 	["mcm.newEffectsDescription"] = "Implémente de nouveaux effets magiques propres à Ressources communes du Vide, comme des effets permettant d'invoquer de nouveaux types de Daedras.\nRequiert un redémarrage.\n\nPar défaut : activé\n\n",
 	["mcm.sdfLabel"] = "Champ de déclin statique",

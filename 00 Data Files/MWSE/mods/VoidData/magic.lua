@@ -7,26 +7,29 @@ local tamrielDataConfig = require("TamrielData.config")
 
 if config.newEffects then
 	tes3.claimSpellEffectId("V_summon_Farmer", 2900)
+	tes3.claimSpellEffectId("V_summon_Quislit", 2901)
 end
 
 -- The effect costs for most TD summons were initially calculated by mort using a formula (dependent on a creature's health and soul) that is now lost and were then adjusted as seemed reasonable.
 -- The new formula used by TD and therefore VD: Effect Cost = (.16 * Health) + (.035 * Soul)
 -- effect id, effect name, creature id, effect mana cost, icon, effect description
 local vd_summon_effects = {
-	{ tes3.effect.V_summon_Farmer, common.i18n("magic.summonFarmer"), "V_Dae_Cre_Farmer", 35, "s\\tx_s_smmn_hunger.dds", common.i18n("magic.summonFarmerDesc")},
+	{ tes3.effect.V_summon_Farmer, "magic.summonFarmer", "V_Dae_Cre_Farmer", 35, "s\\tx_s_smmn_hunger.dds", common.i18n("magic.summonFarmerDesc")},
+	{ tes3.effect.V_summon_Quislit, "magic.summonQuislit", "V_Dae_Cre_Quislit", 16, "s\\tx_s_smmn_scamp.dds", common.i18n("magic.summonQuislitDesc")},
 }
 
--- spell id, cast type, spell name, spell mana cost, 1st effect id, 1st range type, 1st area, 1st duration, 1st minimum magnitude, 1st maximum magnitude, ...
+-- spell id, cast type, spell name, spell mana cost, effect1, ...
 local vd_summon_spells = {
-	{ "V_AS_Cnj_SummonFarmer", tes3.spellType.spell, common.i18n("magic.summonFarmer"), 105, { tes3.effect.V_summon_Farmer }, tes3.effectRange.self, 0, 60, 1, 1 },
+	{ "V_AS_Cnj_SummonFarmer", "spell", "magic.summonFarmer", 105, { id = "V_summon_Farmer", range = "self", duration = 60, min = 1, max = 1} },
+	{ "V_AS_Cnj_SummonQuislit", "spell", "magic.summonQuislit", 48, { id = "V_summon_Quislit", range = "self", duration = 60, min = 1, max = 1} },
 }
 
 -- ingredient id, 1st effect id, 1st effect attribute id, 1st effect skill id, 2nd effect id, ...
 local vd_ingredients = {
-	{ "V_Mas_IngMisc_SaccharineBlue_01", tes3.effect.restoreMagicka, -1, -1,
-										 tes3.effect.T_restoration_FortifyCasting, -1, -1,
-										 tes3.effect.restoreAttribute, tes3.attribute.intelligence, 0,
-										 tes3.effect.telekinesis, -1, -1 },
+	{ "V_Mas_IngMisc_SaccharineBlue_01", nil,
+										 { id = "T_restoration_FortifyCasting" },
+										 nil,
+										 nil },
 }
 
 -- Adds new magic effects based on the tables above
@@ -38,8 +41,8 @@ event.register(tes3.event.magicEffectsResolved, function()
 			local effectID, effectName, creatureID, effectCost, iconPath, effectDescription = unpack(v)
 			tes3.addMagicEffect{
 				id = effectID,
-				name = effectName,
-				description = effectDescription,
+				name = common.i18n("magic." .. effectName),
+				description = common.i18n("magic." .. effectDescription),
 				school = tes3.magicSchool.conjuration,
 				baseCost = effectCost,
 				speed = summonHungerEffect.speed,

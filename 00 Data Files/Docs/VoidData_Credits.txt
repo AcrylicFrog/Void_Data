@@ -1,0 +1,61 @@
+Marcy, Kynesifnar:
+Boethian Robe (clothing)
+Unique Head for Athvelyn (NPCs)
+AS tattooed heads of various races (NPCs)
+New Chimer head textures (NPCs)
+
+Kynesifnar:
+MWSE-Lua addon
+Boethian pots and vases (misc)
+Boethian urns (containers)
+Responsible architecture set (architecture)
+Altar of Padhome (architecture)
+Red Dancer animation and script (NPCs)
+Left-Handed Elf Race (NPCs)
+Dreugh Race (NPCs)
+Farmer (Creature)
+Boethian Town Roadmarker (Architecture)
+Boethian "books" made of skin and tablets (misc)
+Aldereken environmental assets (landscape)
+Alder Fruit (ingredient and flora)
+Void Asteroids (landscape)
+Placeholder AS Skybox (skybox)
+Placeholder Void Skybox (skybox)
+Masserine ImpRuin textures (architecture)
+
+MammaHyena, Kynesifnar:
+Secret Flame Tapestries (furniture)
+Boethian Serpent Tapestry (furniture)
+Bleeding Eye Tapestries (furniture)
+
+matt-adrews:
+In the Wings of Silk (book)
+4 music tracks (music)
+
+PulcharmSolis:
+Maaszihatt Husk Armor (armor set)
+Meteoric Steel Armor and Sword (armor set)
+Maaszihatt tent exterior and brazier (architecture)
+Automantric (clothing)
+2 Maaszihatt heads and 1 hair (NPCs)
+Lunar cacti (static)
+
+AcrylicFrog:
+2 rocks (landscape)
+Cave entrance (landscape)
+2 cliffs ? (landscape)
+3 land textures ? (landscape)
+
+S'wit, Kynesifnar, revenorror, Stele:
+Cave set meshes (originally the Shipal-Shin one for TR)
+
+Red-Eyed Bard:
+Sludge for sugar lakes (landscape)
+New Masserine ground/rocks textures (landscape)
+Azurite, Drel Lead, Meteoric Iron, Pater Brass, Patina, Saccharine, Blue Saccharine (ingredients)
+
+revenorror :
+Glow Whisps (flora)
+
+GubernatorialEkphrasis :
+MWSE-Lua addon French translation file

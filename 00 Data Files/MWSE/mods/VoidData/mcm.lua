@@ -24,6 +24,22 @@ local function registerModConfig()
     -- Feature Toggles
     local toggles = preferences:createCategory{label = common.i18n("mcm.settings")}
     toggles:createOnOffButton{
+        label = common.i18n("mcm.newEffectsLabel"),
+        description = common.i18n("mcm.newEffectsDescription"),
+        variable = mwse.mcm.createTableVariable{
+            id = "newEffects",
+            table = config,
+        },
+    }
+    toggles:createOnOffButton{
+        label = common.i18n("mcm.sdfLabel"),
+        description = common.i18n("mcm.sdfDescription"),
+        variable = mwse.mcm.createTableVariable{
+            id = "sdf",
+            table = config,
+        },
+    }
+    toggles:createOnOffButton{
         label = common.i18n("mcm.skyboxesLabel"),
         description = common.i18n("mcm.skyboxesDescription"),
         variable = mwse.mcm.createTableVariable{
@@ -32,10 +48,10 @@ local function registerModConfig()
         },
     }
     toggles:createOnOffButton{
-        label = common.i18n("mcm.newEffectsLabel"),
-        description = common.i18n("mcm.newEffectsDescription"),
+        label = common.i18n("mcm.weathersLabel"),
+        description = common.i18n("mcm.weathersDescription"),
         variable = mwse.mcm.createTableVariable{
-            id = "newEffects",
+            id = "weathers",
             table = config,
         },
     }

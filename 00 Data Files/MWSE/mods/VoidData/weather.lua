@@ -12,8 +12,8 @@ local masserClearColors = {
 	ambientSunsetColor = tes3vector3.new(0.3905137181282, 0.26701810956001, 0.21518465876579),
 	ambientNightColor = tes3vector3.new(0.16012275218964, 0.076117157936096, 0.0622812025249),
 
-	skySunriseColor = tes3vector3.new(0.86806088685989, 0.40127098560333, 0.29599210619926),
-	skyDayColor = tes3vector3.new(0.84770435094833, 0.42411622405052, 0.28223183751106),
+	skySunriseColor = tes3vector3.new(0.63966184854507, 0.25803083181381, 0.17684654891491),
+	skyDayColor = tes3vector3.new(0.65446639060974, 0.28040969371796, 0.15820489823818),
 	skySunsetColor = tes3vector3.new(0.41936293244362, 0.31905883550644, 0.29449909925461),
 	skyNightColor = tes3vector3.new(0.038736172020435, 0.038727939128876, 0.038726814091206),
 
@@ -38,8 +38,8 @@ local masserCloudyColors = {
 	ambientSunsetColor = tes3vector3.new(0.39074423909187, 0.30294641852379, 0.26686233282089),
 	ambientNightColor = tes3vector3.new(0.18608456850052, 0.08224131911993, 0.072520740330219),
 
-	skySunriseColor = tes3vector3.new(0.84250062704086, 0.41527849435806, 0.36690276861191),
-	skyDayColor = tes3vector3.new(0.93660247325897, 0.52352833747864, 0.4225372672081),
+	skySunriseColor = tes3vector3.new(0.6953958272934, 0.30593258142471, 0.26718673110008),
+	skyDayColor = tes3vector3.new(0.7072382569313, 0.32628053426743, 0.23977030813694),
 	skySunsetColor = tes3vector3.new(0.51484781503677, 0.35804954171181, 0.35163488984108),
 	skyNightColor = tes3vector3.new(0.038736172020435, 0.038727939128876, 0.038726814091206),
 
@@ -137,7 +137,7 @@ local masserAshstorm = { fog = nil, fogMGE = nil, wind = nil, windMGE = nil,
 						colors = masserAshstormColors, sky = nil, clouds = nil, sound = nil }
 
 local masserScatteringTable = { inscatter = tes3vector3.new(0.096720301020052, 0.45920241806197, 0.509099200046), outscatter = tes3vector3.new(0.35370452573781, 0.30363342641662, 0.2474806474845) }
-local masserSkylightScatteringTable = { mix = 0.398, skylight = tes3vector3.new(0.71800758740061, 0.61285649227168, 0.45412380778811) }
+local masserSkylightScatteringTable = { mix = 0.398, skylight = tes3vector3.new(0.63574945782545, 0.54355344566893, 0.40507510293717) }
 
 local defaultClearColors = {
 	ambientSunriseColor = tes3vector3.new(0.1843137294054, 0.258823543787, 0.37647062540054),
