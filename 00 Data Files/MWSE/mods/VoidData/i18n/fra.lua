@@ -2,6 +2,8 @@ return {
 	-- Magic Text
 	["magic.summonFarmer"] = "Appel de cultivateur",
 	["magic.summonFarmerDesc"] = "Cet effet permet d'invoquer un cultivateur des Royaumes extérieurs. Il apparaît à 2 mètres du lanceur et attaque toute entité hostile à son maître jusqu'à ce que le sort prenne fin ou qu'il soit tué. Quand il meurt ou quand le sort ne fait plus effet, il disparaît et retourne dans les Royaumes extérieurs.",
+	["magic.summonQuislit"] = "Appel de quislit",
+	["magic.summonQuislitDesc"] = "Cet effet permet d'invoquer un quislit des Royaumes extérieurs. Il apparaît à 2 mètres du lanceur et attaque toute entité hostile à son maître jusqu'à ce que le sort prenne fin ou qu'il soit tué. Quand il meurt ou quand le sort ne fait plus effet, il disparaît et retourne dans les Royaumes extérieurs.",
 
 	-- MCM Text
 	["mcm.name"] = "Ressources communes du Vide",
@@ -11,11 +13,12 @@ return {
 	["mcm.Kynesifnar"] = "Kynesifnar - Scripting",
 	["mcm.settings"] = "Paramètres",
 
-	["mcm.skyboxesLabel"] = "Cieux alternatifs",
-	["mcm.skyboxesDescription"] = "Ajoute des cieux pour les différents royaumes au-delà de Nirn.\nRequiert un rechargement.\n\nPar défaut : activé\n\n",
 	["mcm.newEffectsLabel"] = "Nouveaux effets magiques",
 	["mcm.newEffectsDescription"] = "Implémente de nouveaux effets magiques propres à Ressources communes du Vide, comme des effets permettant d'invoquer de nouveaux types de Daedras.\nRequiert un redémarrage.\n\nPar défaut : activé\n\n",
 	["mcm.sdfLabel"] = "Champ de déclin statique",
 	["mcm.sdfDescription"] = "Implémente une mécanique représentant les effets délétères d'un séjour sur les lunes ainsi que de l'équipement permettant de lutter contre.\nRequiert un rechargement.\n\nPar défaut : activé\n\n",
-
+	["mcm.skyboxesLabel"] = "Cieux alternatifs",
+	["mcm.skyboxesDescription"] = "Ajoute des cieux pour les différents royaumes au-delà de Nirn.\nRequiert un rechargement.\n\nPar défaut : activé\n\n",
+	["mcm.weathersLabel"] = "Nouvelles météos",
+	["mcm.weathersDescription"] = "Implémente de nouvelles météos pour les différents royaumes au-delà de Nirn.\nRequiert un rechargement.\n\nPar défaut : activé\n\n",
 }
